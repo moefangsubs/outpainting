@@ -94,13 +94,12 @@ body {
 
 /*---- slider kontent ----*/
 
-
 .program-content {
       height: calc(100% - 40px);
   width: 100%;
   height: auto;
   position: relative;
- /* overflow: scroll; */
+    overflow: hidden;
 }
 
 .slideshow-container {
@@ -136,7 +135,7 @@ body {
 
 .prompttext {
     padding: 6pt;
-    font-size: 12pt;
+    font-size: 10pt;
 }
 .prev,
 .next {
@@ -158,6 +157,16 @@ body {
 .next:hover {
   color: white;
   background-color: #430078;
+}
+
+
+.imgmember {
+    color: #ffffff94;
+    position: absolute;
+    left: 10px;
+    bottom: 55px;
+    font-weight: 900;
+    font-size: 2.3vw;
 }
 
 @media screen and (max-width: 768px) {
@@ -349,4 +358,32 @@ left: 0;
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+
+.collectimgblur {
+  filter: blur(40px) grayscale(100%);
+  width: 100%;
+  transition: filter .4s ease-in-out;
+}
+
+.confirm-btn {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 3px;
+  padding: 5px 10px;
+  color: white;
+  font-size: 19pt;
+  transition: all .4s ease-in-out;
+  cursor: pointer;
+}
+ 
+.confirm-btn:hover {
+  background-color: white;
+  color: purple;
+  transition: all .4s ease-in-out;
 }
