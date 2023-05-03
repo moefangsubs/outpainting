@@ -66,3 +66,37 @@ function showSlides(n) {
       var clock = document.getElementById("clock");
       clock.innerHTML = now.format("HH:mm:ss");
     }, 1000);
+
+
+
+/*--- */
+
+const buttons = document.querySelectorAll('.confirm-btn');
+const images = document.querySelectorAll('.collectimgblur');
+
+buttons.forEach(function(btn, index) {
+  btn.addEventListener('click', function() {
+    if (btn.innerText === 'NSFW') {
+      images.forEach(img => {
+        img.style.filter = 'blur(40px) grayscale(100%)';
+      });
+      images[index].style.filter = 'grayscale(0%)';
+      buttons.forEach(btn => {
+        btn.innerText = 'NSFW';
+        btn.style.top = '45%';
+        btn.style.border = '5px solid white';
+        btn.classList.remove('bottom');
+      });
+      btn.innerText = 'Back to blur';
+      btn.style.top = '80%';
+      btn.style.border = '3px solid white';
+      btn.classList.add('bottom');
+    } else {
+      images[index].style.filter = 'blur(40px) grayscale(100%)';
+      btn.innerText = 'NSFW';
+      btn.style.top = '45%';
+      btn.style.border = '5px solid white';
+      btn.classList.remove('bottom');
+    }
+  });
+});
